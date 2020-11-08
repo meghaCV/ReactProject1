@@ -1,0 +1,39 @@
+.App {
+    text-align: center;
+    max-width: 1500px;
+  }
+  
+  .App-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      /* animation: App-logo-spin infinite 20s linear; */
+    }
+  }
+  
+  .App-header {
+    background-color:lightskyblue;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 2vmin);
+    color: white;
+    width: 100%;
+    padding: 10px 16px;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+
+  @media only screen and (min-width: 660px) {
+    .App {
+      grid-template-columns: 1fr 1fr 1fr; /* each fr is a equal space column. */
+    }
+  }
+  

@@ -1,0 +1,28 @@
+/* 
+
+Class naming:
+1. Classes related to a React component are written in uppercase withouth spaces. Example: CardGrid.
+2. Classes not related to React are written in lower case with dashes. Example: video-container
+*/
+
+/* Base */
+@import url("./_base/layout.css");
+
+/* Atoms */
+@import url("./atoms/button.css");
+
+
+
+/* Molecules */
+
+
+@import url("./modules/search-bar.css");
+
+/* Organisms */
+@import url("./modules/header.css");
+
+/* Templates */
+@import url("./templates/home-page.css");
+@import url("./templates/results-page.css");
+@import url("./templates/footer.css");
+

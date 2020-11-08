@@ -1,0 +1,8 @@
+.result-page {
+   
+    background-color: lightskyblue;
+    
+    margin-bottom: 16px;
+    font-size: 20px;
+    /* 100vh forces to cover the screen. 100% only cover the screen if there is a lot of content. */
+  }

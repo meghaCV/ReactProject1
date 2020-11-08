@@ -1,0 +1,38 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:lightskyblue;
+  color: white;
+  text-align: center;
+}
+
+.contact-list {
+    padding-left: 0;
+  }
+  .contact-list li {
+    list-style-type: none;
+  }
+  .contact-list a {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: var(--space-small);
+    padding: var(--space-smaller) var(--space-small);
+    background-color: black;
+    color: white;
+    border: solid var(--space-smaller) white;
+  }
+  
+  .contact-list i {
+    margin-right: var(--space-small);
+  }
+  
+  .contact-list a:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    border: solid var(--space-smaller) black;
+  }
+  
+  
