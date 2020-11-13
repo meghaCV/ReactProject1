@@ -1,66 +1,59 @@
-import React,{useState,useEffect} from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Footer from "./components/organisms/Footer";
+//React Core
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-// Components
+//Components
 import HomePage from "./components/templates/HomePage";
-import ResultPage from "./components/templates/ResultPage";
-
-
-// Other imports
+import TrackingPage from "./components/templates/TrackingPage";
+import CustomerPage from "./components/templates/CustomerPage";
+import Header from "./components/organisms/Header";
+import Footer from "./components/organisms/Footer";
 import "./css/style.css";
-import information from "./information.json";
-
 
 export default function App() {
   const [information, setInformation] = useState([]);
-  
-  useEffect(() => {
+  const endPoint = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
+
+  useEffect(() => {  
     getData();
-},[]);
-  
+  }, []);
 
-  const getData = async () => {
-      const response = await fetch('https://my.api.mockaroo.com/orders.json?key=e49e6840',{mode:"cors"});
-
-        // Once the information is downloaded we transformed it to json
-        const data = await response.json();
-
-        // Once the information is transformed to json we put it into our hooks
-        setInformation(data);
-        console.log(data);
+  const getData = async () => {  
+  try{
+    const response = await fetch(endPoint,{mode:"cors"});  
+      const data = await response.json();     
+      setInformation(data); 
+      console.log(information);
+  }catch{
+    console.log("Error while fetching API");
   }
+};
 
-  return (
-    <Router>
-    <div className= "App">
+
+return (
+  <Router>
+    <div className="App">
+      <Header />
       <Switch>
-       <Route
-        path="/"
-        exact
-        render={() => <HomePage information={information} />}
-      />
-      
-      <Route
-        path="/results/"
-        render={({ match }) => (
-
-          <ResultPage match={match}  information={information} />
-        )}
-      />
-    </Switch>
-    <Footer />
-  </div>
-</Router>
-  );
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/Customer/:parameter"
+          render={({ match }) => (
+            <CustomerPage parameter={match.params.parameter} information={information} />
+          )}
+        />
+        <Route path="/Result/:parameter"
+          render={({ match }) => (
+            <TrackingPage parameter={match.params.parameter} information={information} />
+          )}
+        />
+       
+      </Switch>
+      <Footer/>
+    </div>
+  </Router>
+);
 }
 
-
-  
-        
-      
-
-
-   
-  
 

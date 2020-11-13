@@ -20,9 +20,13 @@ Class naming:
 
 /* Organisms */
 @import url("./modules/header.css");
+@import url("./modules/Allparcel.css");
+
 
 /* Templates */
 @import url("./templates/home-page.css");
 @import url("./templates/results-page.css");
 @import url("./templates/footer.css");
+@import url("./templates/customerpage.css");
+
 
